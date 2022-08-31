@@ -29,7 +29,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${SECRET_DUCK}
+        run: test ${SECRET_DUCK} == "Quack" || exit 1
         env:
           SECRET_DUCK: ${{ secrets.SECRET_DUCK }}
 
